@@ -339,16 +339,18 @@ Phase 5: Scale horizontally with load balancer
 
 ```bash
 cd /app/flash-sale-system
-javac -d bin model/*.java service/*.java Main.java
+javac -d bin model/*.java service/*.java Main.java MainWithDashboard.java
 ```
 
-### Run with Defaults (100 stock, 1000 users)
+### Option 1: CLI Mode (Simple)
+
+#### Run with Defaults (100 stock, 1000 users)
 
 ```bash
 java -cp bin Main
 ```
 
-### Run with Custom Parameters
+#### Run with Custom Parameters
 
 ```bash
 # Syntax: java -cp bin Main <stock_count> <user_count>
@@ -357,6 +359,32 @@ java -cp bin Main 50 500      # 50 items, 500 users
 java -cp bin Main 200 2000    # 200 items, 2000 users
 java -cp bin Main 10 100      # 10 items, 100 users
 ```
+
+### Option 2: Dashboard Mode (Visual Analytics) 📊
+
+#### Run with Interactive Dashboard
+
+```bash
+java -cp bin MainWithDashboard
+```
+
+**Features:**
+- 🌐 Beautiful web-based dashboard at `http://localhost:8080`
+- 📊 Real-time charts and visualizations
+- 📈 Performance metrics tracking
+- 🔄 Auto-refreshing data
+- 📉 Historical trend analysis
+- ⚖️ Safe vs Unsafe comparison charts
+
+**Interactive Menu:**
+1. Run Standard Simulation (100 stock, 1000 users)
+2. Run Custom Simulation (specify parameters)
+3. Run Safe vs Unsafe Comparison
+4. Run Multiple Simulations (5 runs)
+5. View Dashboard URL
+6. Exit
+
+See [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md) for detailed dashboard documentation.
 
 ---
 
