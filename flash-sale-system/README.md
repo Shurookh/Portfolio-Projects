@@ -32,14 +32,22 @@ This system simulates a real-world flash sale scenario (like Amazon Lightning De
 ```
 flash-sale-system/
 ├── model/
-│   ├── Product.java              # Product entity with stock management
-│   ├── User.java                 # User entity
-│   └── Order.java                # Order entity with status tracking
+│   ├── Product.java                    # Product entity with stock management
+│   ├── User.java                       # User entity
+│   └── Order.java                      # Order entity with status tracking
 ├── service/
-│   ├── InventoryManager.java     # Core business logic with thread safety
-│   └── FlashSaleSimulator.java   # Simulation orchestration
-├── Main.java                     # Entry point with CLI support
-└── README.md                     # Documentation
+│   ├── InventoryManager.java           # Core business logic with thread safety
+│   ├── UnsafeInventoryManager.java     # Unsafe version (demonstrates race condition)
+│   ├── FlashSaleSimulator.java         # Simulation orchestration
+│   └── DashboardServer.java            # Embedded HTTP server for analytics dashboard
+├── Main.java                           # CLI entry point
+├── MainWithDashboard.java              # Dashboard entry point with visual analytics
+├── RaceConditionDemo.java              # Side-by-side safe vs unsafe comparison
+├── README.md                           # Main documentation
+├── DASHBOARD_GUIDE.md                  # Dashboard usage and features
+├── RACE_CONDITION_ANALYSIS.md          # Technical analysis
+├── VALIDATION_SUMMARY.md               # Testing proof
+└── QUICK_START.md                      # Quick reference guide
 ```
 
 ### Design Principles
